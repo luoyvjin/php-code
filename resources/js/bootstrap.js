@@ -1,6 +1,9 @@
 import _ from 'lodash';
 window._ = _;
 
+// Bootstrap 的 JS（4.3 之后导航栏的下拉菜单等交互组件依赖它，配合 @popperjs/core 使用）
+import 'bootstrap';
+
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the
