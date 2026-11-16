@@ -5,6 +5,7 @@ use App\Http\Controllers\StaticPagesController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StatusesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,3 +39,5 @@ Route::post('password/email', [PasswordController::class, 'sendResetLinkEmail'])
 
 Route::get('password/reset/{token}', [PasswordController::class, 'showResetForm'])->name('password.reset');
 Route::post('password/reset', [PasswordController::class, 'reset'])->name('password.update');
+
+Route::resource('statuses', StatusesController::class, ['only' => ['store', 'destroy']]);
